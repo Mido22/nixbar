@@ -35,3 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# OSX
+.DS_Store
+
+# App packaged
+dist
+release
+main.js
+main.js.map
