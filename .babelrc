@@ -1,13 +1,14 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": ["es2015", "stage-2", "react"],
   "plugins": ["add-module-exports"],
   "env": {
     "production": {
       "presets": ["react-optimize"],
-      "plugins": ["babel-plugin-dev-expression"]
+      "plugins": ["babel-plugin-dev-expression", "transform-async-functions"]
     },
     "development": {
-      "presets": ["react-hmre"]
+      "presets": ["react-hmre"],
+      "plugins": ["transform-async-functions"]
     },
     "test": {
       "plugins": [
