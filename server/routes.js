@@ -11,13 +11,8 @@ const DB = require('./db');
 // const async = require('asyncawait/async');
 const DB_ROUTE = '/db/';
 
-function log() {
-  winston.info(...arguments);
-}
-
-function loge() {
-  winston.log('error', ...arguments)
-}
+function log() {   winston.info(...arguments); }
+function loge() {   winston.log('error', ...arguments); }
 
 const routes = express.Router();              // get an instance of the express Router
 

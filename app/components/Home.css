@@ -12,3 +12,11 @@
 .container a {
   font-size: 1.4rem;
 }*/
+
+.home-box {
+  height: 90vh
+}
+
+.grommetux-table th .grommetux-button {
+  width: 100%;
+}

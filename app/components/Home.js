@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 import { Window, TitleBar, SegmentedControl, SegmentedControlItem, Text } from 'react-desktop/macOs';
 import { Link } from 'react-router';
 import './Home.css';
-import io from 'socket.io-client';
-import LibraryPane from './LibraryPane';
+import LibraryPane from './libPane/LibraryPane';
 
-const socket = io('', { path: '/api/io' });
 
 export default class Home extends Component {
   constructor(props: Object) {
@@ -43,14 +41,9 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Window
-        chrome
-      >
-        <TitleBar title="Nixbar 3000" controls />
-        <SegmentedControl box>
-          {this.renderItems()}
-        </SegmentedControl>
-      </Window>
+      <SegmentedControl box className='home-box'>
+        {this.renderItems()}
+      </SegmentedControl>
     );
   }
 }

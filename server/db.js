@@ -5,13 +5,9 @@ const Datastore = require('nedb');
 const Bluebird = require('bluebird');
 const winston = require('winston');
 
-function log() {
-  winston.info(...arguments);
-}
+function log() {   winston.info(...arguments); }
+function loge() {   winston.log('error', ...arguments); }
 
-function loge() {
-  winston.log('error', ...arguments)
-}
 
 module.exports = {
   find,

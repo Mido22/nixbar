@@ -15,11 +15,13 @@ import bodyParser from 'body-parser';
 import config from '../webpack.config.development';
 import routes  from './routes';
 
+function log() {   winston.info(...arguments); }
+function loge() {   winston.log('error', ...arguments); }
+
 const app = express();
-const log = () => winston.info(...arguments);
-const loge = () => winston.log('error', ...arguments);
 const compiler = webpack(config);
 const PORT = process.env.PORT || 1331;
+const STATIC_FOLDER = 'assets';
 
 const wdm = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
@@ -35,6 +37,7 @@ app.use(bodyParser.json());
 app.use(wdm);
 app.use(webpackHotMiddleware(compiler));
 app.use('/api', routes);
+app.use('/file', express.static(STATIC_FOLDER));
 
 const server = app.listen(PORT, 'localhost', err => {
   if (err) {

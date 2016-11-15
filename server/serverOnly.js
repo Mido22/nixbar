@@ -12,13 +12,9 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 1331;
 
-function log() {
-  winston.info(...arguments);
-}
+function log() {   winston.info(...arguments); }
+function loge() {   winston.log('error', ...arguments); }
 
-function loge() {
-  winston.log('error', ...arguments)
-}
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
